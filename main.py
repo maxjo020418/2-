@@ -5,22 +5,10 @@
 
 조영민 왔다감
 '''
-import os
 import Games
-from globals import DEBUG
-#from .Games import _1무궁화꽃, _2뽑기, _3줄다리기, _4구슬치기, _5징검다리, _6오징어, s노숙자, s딱지
+from debugger import init_debug
 
-if DEBUG:
-    print('== DEBUG MODE ==')
-    print(os.path)
-    for module in os.listdir(os.path.dirname('./')):
-        print(module, end='')
-        if module == 'Assets':
-            print(' -', os.listdir('./Assets'))
-        elif module == 'Games':
-            print(' -', os.listdir('./Games'))
-        else:
-            print()
+init_debug()
 
 banner = open('./Assets/1.txt', 'r')
 print(banner.read())

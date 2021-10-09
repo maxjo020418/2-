@@ -5,4 +5,4 @@ from globals import DEBUG
 from Games._1무궁화꽃 import test
 
 if DEBUG:
-  print('Games 로딩 완료')
+  print('== Games 로딩 완료 ==')
