@@ -16,4 +16,4 @@ def init_debug():
               print(' -', os.listdir('./Games'))
           else:
               print()
-      print('\n\n')
+      print()

@@ -8,15 +8,24 @@
 import Games
 from debugger import init_debug
 
+import time
+
 init_debug()
 
+print('=' * 100 + '\n' + ' ' * 20 +
+      "'=' 모양이 끝까지 보이도록 터미널의 크기를 맞추세요/당기세요" + '\n' + '=' * 100 + '\n')
+
+print('완료되면 엔터를 누르세요...', end = '')
+input()
+
 banner = open('./Assets/1.txt', 'r')
-print(banner.read())
+for line in banner:
+  print(line, end = '')
+  time.sleep(.1)
 banner.close()
 
-print('\n\n' + '=' * 100 + '\n' + ' ' * 20 +
-      "'=' 모양이 끝까지 모이도록 터미널의 크기를 맞추세요/당기세요" + '\n' + '=' * 100)
-
+print('\n\n' + '=' * 100)
 print(' ' * 30 + '제작자: 지준원, 조영민, 조현준, 최이수')
+print('=' * 100)
 
 Games.test()
