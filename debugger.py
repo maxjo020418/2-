@@ -7,7 +7,8 @@ import os
 def init_debug():
   if DEBUG:
       print('== DEBUG MODE ==')
-      print(os.path)
+      print('PATH:', os.path)
+      print('DIR:')
       for module in os.listdir(os.path.dirname('./')):
           print(module, end='')
           if module == 'Assets':

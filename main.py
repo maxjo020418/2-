@@ -1,4 +1,7 @@
+#######DOCS#######
+'''
 
+'''
 
 
 '''
@@ -25,7 +28,7 @@ print()
 banner = open('./Assets/1.txt', 'r')
 for line in banner:
   print(line, end = '')
-  time.sleep(.1)
+  time.sleep(.05)
 banner.close()
 
 print('\n\n' + '=' * 100)
