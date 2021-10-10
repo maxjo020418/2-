@@ -1,3 +1,6 @@
+
+
+
 '''
 슴우디(●'◡'●) 터미널 오징어겜
 
@@ -17,6 +20,7 @@ print('=' * 100 + '\n' + ' ' * 20 +
 
 print('완료되면 엔터를 누르세요...', end = '')
 input()
+print()
 
 banner = open('./Assets/1.txt', 'r')
 for line in banner:
@@ -25,6 +29,7 @@ for line in banner:
 banner.close()
 
 print('\n\n' + '=' * 100)
+print(' ' * 40 + 'presented by: 슴우디❤️')
 print(' ' * 30 + '제작자: 지준원, 조영민, 조현준, 최이수')
 print('=' * 100)
 
