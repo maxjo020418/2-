@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "repl_python3_beta_seumudi"
+version = "0.1.0"
+description = ""
+authors = ["maxjo <<>>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+easy-getch = "^1.0.6"
+getch = "^1.0"
+pynput = "^1.7.4"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
