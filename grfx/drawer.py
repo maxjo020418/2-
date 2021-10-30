@@ -29,6 +29,14 @@ def draw(height: int, coordinates, line: str = '.', border: bool = True, filler:
 				except:	
 					line_type.append(line)
 
+		elif (s[0][0] == s[1][0] and s[0][1] == s[1][1]):
+			points.append([s[0][0], s[0][1]])
+			try:
+				if s[0][2]:
+					line_type.append(s[0][2])
+			except:
+				line_type.append(line)
+
 		else:
 			if (s[0][1] < s[1][1]):
 				a = s[0][1]
@@ -50,7 +58,7 @@ def draw(height: int, coordinates, line: str = '.', border: bool = True, filler:
 		print(line_type)
 
 	# 프린팅
-	print('=' * 100)
+	print('═' * 100)
 	for y in range(height):
 		for x in range(100):
 			if [x, y] in points:
@@ -58,4 +66,4 @@ def draw(height: int, coordinates, line: str = '.', border: bool = True, filler:
 			else:
 				print(filler, end = '')
 		print()
-	print('=' * 100)
+	print('═' * 100)
