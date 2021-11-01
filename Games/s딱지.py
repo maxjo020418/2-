@@ -1,6 +1,5 @@
 #파이썬 내부, 외부 패키지
-import time
-import keyboard_input as kb
+import keyboard_input
 
 # 자체 패키지
 import grfx
@@ -9,6 +8,17 @@ from globals import cls
 
 # 게임 run 함수
 def run():
+	g.cls()
+
+	# 설명 화면
+	banner = open('./Assets/_딱지.txt', 'r')
+	for line in banner:
+		print(line, end = '')
+	banner.close()
+
+	input('딱지치기 게임\n뭐시기 뭐시기 이야기\n규칙\n엔터를 눌러 계속')
+
+	# 3차원 리스트
 	box_coordinates = [
 			[[50, 2, '|'], [50, 4]],
 
@@ -38,44 +48,37 @@ def run():
 			[[56, 2, '░'], [56, 4]],
 			[[44, 2, '░'], [44, 4]],
 			[[57, 2, '░'], [57, 4]],
-	] # 3차원 리스트
+	]
 
-	kb.listener.start()  # keyboard_input에서 import - 키보드 리스너
-
-	''''
-	# async 키보드 리스너
-	async def kb_hit():
-		while 1:
-			if g.kbhit == "'q'" or g.kbhit == "Key.space":
-				return False
-			else:
-				return True
-	'''
-
-	#메인 루프 함수사용 변수 정의, 초기화
+	# 메인 루프 함수사용 변수 정의, 초기화
 	xpos = box_coordinates[0][0][0]
 	right = True
 	speed = 3
-
+	
 	# 첫 프레임 그리기
 	grfx.draw(7, box_coordinates)
 
 	# 메인 게임 루프
 	while g.kbhit != "Key.space":
+	
+		if 0 < box_coordinates[0][0][0] and box_coordinates[0][0][0] < 99: 
+			pass
+		else: 
+			right = not right
 
-		if 0 < box_coordinates[0][0][0] and box_coordinates[0][0][0] < 99: pass
-		else: right = not right
-
+		temp_xpos = xpos
 		if right:
-			temp_xpos = xpos
 			xpos += speed
 		else:
-			temp_xpos = xpos
 			xpos -= speed
 
 		cls()
 		# 프레임의 위치가 다를때만 렌더링
 		if round(xpos) != round(temp_xpos):
+			print('스페이스를 눌러 박스안에 맞추기!!')
 			box_coordinates[0][0][0], box_coordinates[0][1][0] = round(xpos), round(xpos)
 			grfx.draw(7, box_coordinates)
+
+	print(f'오차: {abs(50.5 - xpos)}')
+	input('엔터를 눌러 계속...')
 		
