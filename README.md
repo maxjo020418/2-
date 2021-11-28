@@ -9,3 +9,8 @@ pynput 패키지가 필요하므로 아래와같이 cmd에서 설치해줍니다
 ```
 pip install pynput
 ```
+
+### 현재 윈도우에서 잘 작동을 안하거나 미완성인 게임, 모듈
+1. `_오징어.py`(미완)
+2. `_2뽑기.py`(윈도우기반 컴퓨터에서 입력 작동 안함) [돌아가는 영상](https://sangmyungkr-my.sharepoint.com/:v:/g/personal/202110880_sangmyung_kr/EQ9V_FNeRZ9JvAOnTd6rq2IBXOjXj3RnZwhoDQf31LmRSg?e=arZkT0)
+3. `turtle_drawer.py`, `s노숙자.py`(미사용 모듈)
